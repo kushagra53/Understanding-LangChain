@@ -1,0 +1,91 @@
+all the parts i think i should pay more attention to are here-
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------
+
+You do NOT build one pipeline for all PDFs.
+
+You classify documents before ingestion.
+
+How do you classify documents:
+Method 1 — Text density heuristic (most important)
+Load first 1–2 pages
+
+Count:
+
+total characters
+
+number of line breaks
+
+average line length
+
+Rules of thumb:
+
+Many short lines → layout-based
+
+Few long paragraphs → text-based
+
+High whitespace → visual document
+
+Your menu PDF fails instantly here.
+
+--------------------------------------------------------------
+
+For quiz generation:
+
+Educational PDFs → good fit
+
+Flyers / menus / ads → bad fit
+
+If a PDF:
+
+has dense paragraphs
+
+has headings + explanations
+
+has logical reading order
+
+You’re safe.
+
+If it:
+
+relies on visual grouping
+
+is price lists, posters, infographics
+
+You either:
+
+reject it
+
+warn the user
+
+downgrade expectations
+
+This is product honesty, not a technical failure.
+
+---------------------------------------------------------------------
+
+
+We can use this logic to classify docs before ingesting as visual docs wont be something we can generate a quiz of,
+so just to be sure we verify the pdf if required.
+
+
+Extract first page text
+
+avg_line_length = total_chars / number_of_lines
+short_line_ratio = lines_under_40_chars / total_lines
+
+if avg_line_length < 50 and short_line_ratio > 0.6:
+    document_type = "visual_layout"
+else:
+    document_type = "text_dense"
+
+
+-------------------------------------------------------------------------------
