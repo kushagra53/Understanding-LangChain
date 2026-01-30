@@ -1,7 +1,23 @@
+VERY IMP THE SHORT CUT TO COMMENT IT ALL EVERYTHING OUT IS -
+
+CRTL+/
+--------------------------------------------------------------------------
+
 all the parts i think i should pay more attention to are here-
 
+HOW TO START
+
+Always activate .venv
+CMD- .venv\Scripts\activate
+POWERSHELL- .\.venv\Scripts\Activate.ps1
 
 
+Start Jupyter from that activated terminal
+
+Install deps once:
+
+pip install -r requirements.txt
+------------------------------------------------------------
 
 
 

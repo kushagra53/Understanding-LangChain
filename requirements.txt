@@ -5,3 +5,5 @@ pypdf
 pymupdf
 pandas 
 openpyxl 
+sentence-transformers
+chromadb
